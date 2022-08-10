@@ -88,9 +88,16 @@ export class Card {
         this.timeElement().textContent = this._date;
     }
 
+    refreshStatus() {
+        const button = this.findElement(`card-${this._status}-button`);
+
+        button.disabled = true;
+    }
+
     hydrate() {
         this.refreshTitle();
         this.refreshText();
         this.refreshDate();
+        this.refreshStatus();
     }
 }
