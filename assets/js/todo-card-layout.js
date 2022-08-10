@@ -14,7 +14,7 @@ export const todoCardLayout = [
     {
         tag: 'div',
         class: 'card__header',
-        parentId: 'main',
+        parentId: 'card',
         text: '',
         id: 'card-header'
     },
@@ -50,7 +50,7 @@ export const todoCardLayout = [
     },
     // title element
     {
-        tag: 'div',
+        tag: 'h2',
         class: 'card__header__top__title',
         parentId: 'card-header-top',
         text: '',

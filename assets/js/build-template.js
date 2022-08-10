@@ -64,12 +64,12 @@ const createInDom = (
  *
  * @param {Array.<Object>} layout
  */
-export const showCalculator = (layout, id) => {
+export const showTemplate = (layout, id) => {// id will be used for multiple cards
     for (const element of layout) {
         createInDom(
             element.tag,
             element.class,
-            id,
+            element.id,
             element.parentId,
             element.text
         );
