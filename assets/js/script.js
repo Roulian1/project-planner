@@ -1,3 +1,3 @@
-import { showCards } from "./show-cards.js";
+import { collectCards } from "./collect-cards.js";
 
-showCards();
+collectCards();
