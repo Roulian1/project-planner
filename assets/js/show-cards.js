@@ -10,7 +10,5 @@ const fakeCard = {
 
 export const showCards = () => {
     let TestCard = new Card(fakeCard.id, fakeCard.title, fakeCard.text, fakeCard.date, fakeCard.status)
-
-    TestCard.showInDom();
 }
 
