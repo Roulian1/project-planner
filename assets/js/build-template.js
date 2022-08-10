@@ -10,20 +10,15 @@ import { formatId } from "./format-id.js";
  *
  * @returns {Node}
  */
-const createElement = (
-    elementTag,
-    elementClass,
-    elementId,
-    elementInnerText
-) => {
+const createElement = (element, id) => {
     // create a new section element
-    const newElement = document.createElement(elementTag);
+    const newElement = document.createElement(element.tag);
     // add class to it
-    newElement.classList.add(elementClass);
+    newElement.classList.add(element.class);
     // add id to it
-    newElement.id = elementId;
+    newElement.id = formatId(element.id, id);
     // add text to it
-    newElement.innerText = elementInnerText;
+    newElement.innerText = element.text;
 
     return newElement;
 };
@@ -38,27 +33,14 @@ const createElement = (
  * @param {String} parentId
  * @param {String} elementInnerText
  */
-const createInDom = (
-    elementTag,
-    elementClass,
-    elementId,
-    parentId,
-    elementInnerText,
-    id
-) => {
+const createInDom = (element, id) => {
     // If parent is main, don't add an id number
-    parentId = parentId === 'main' ? parentId : `#${formatId(parentId, id)}`
+    const parentId = element.parentId === 'main' ? element.parentId : `#${formatId(element.parentId, id)}`
 
     // get the parent element
     const parent = document.querySelector(parentId);
     // create Element
-    const newElement = createElement(
-        elementTag,
-        elementClass,
-        formatId(elementId, id),
-        elementInnerText
-    );
-
+    const newElement = createElement(element, id);
     // create and append new element to parent
     parent.append(newElement);
 };
@@ -71,13 +53,6 @@ const createInDom = (
  */
 export const showTemplate = (layout, id) => {// id will be used for multiple cards
     for (const element of layout) {
-        createInDom(
-            element.tag,
-            element.class,
-            element.id,
-            element.parentId,
-            element.text,
-            id
-        );
+        createInDom(element, id);
     }
 };
