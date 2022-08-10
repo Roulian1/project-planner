@@ -78,6 +78,14 @@ export const todoCardLayout = [
         text: 'Done',
         id: 'card-done-button'
     },
+    // update button
+    {
+        tag: 'button',
+        class: 'card__footer__button',
+        parentId: 'card-footer',
+        text: 'Update',
+        id: 'card-update-button'
+    },
     // main text
     {
         tag: 'p',
