@@ -46,7 +46,7 @@ const createInDom = (
     id
 ) => {
     // If parent is main, don't add a id number
-    parentId = parentId === 'main' ? parentId : `#${buildId(parentId, id)}`
+    parentId = parentId === 'main' ? parentId : `#${formatId(parentId, id)}`
 
     // get the parent element
     const parent = document.querySelector(parentId);
@@ -54,7 +54,7 @@ const createInDom = (
     const newElement = createElement(
         elementTag,
         elementClass,
-        buildId(elementId, id),
+        formatId(elementId, id),
         elementInnerText
     );
 
@@ -88,7 +88,7 @@ export const showTemplate = (layout, id) => {// id will be used for multiple car
  * @param {String} baseId 
  * @returns 
  */
-const buildId = (baseId, id) => `${baseId}--${formatIdNumber(id)}`
+const formatId = (baseId, id) => `${baseId}--${toFourDigits(id)}`
 
 /**
  * Return provided number to a 4 digits String.
@@ -97,7 +97,7 @@ const buildId = (baseId, id) => `${baseId}--${formatIdNumber(id)}`
  * @param {Integer} id 
  * @returns {String}
  */
-const formatIdNumber = (id) => {
+const toFourDigits = (id) => {
     // convert integer to string
     id = id.toString();
     // format to 4 digits
