@@ -1,15 +1,16 @@
 import { showTemplate } from "./build-template.js";
 import { todoCardLayout } from "./todo-card-layout.js";
 import { formatId } from "./format-id.js";
+import { daysSince } from "./dates.js";
 
 export class Card {
 
     constructor(id, title, text, date, status) {
-        this._id = id;
-        this._title = title;
-        this._text = text;
-        this._date = date;
-        this._status = status;
+        this.setId(id);
+        this.setTitle(title);
+        this.setText(text);
+        this.setDate(date);
+        this.setStatus(status);
 
         this.showInDom();
         this.hydrate();
@@ -28,7 +29,7 @@ export class Card {
     }
 
     setDate(date) {
-        this._date = date;
+        this._date = daysSince(date);
     }
 
     setStatus(status) {
