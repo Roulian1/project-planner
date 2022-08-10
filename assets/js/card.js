@@ -57,7 +57,7 @@ export class Card {
     }
 
     titleElement() {
-        return this.findElement('card-header-top');
+        return this.findElement('card-title');
     }
 
     textElement() {
