@@ -64,12 +64,12 @@ const createInDom = (
  *
  * @param {Array.<Object>} layout
  */
-export const showCalculator = (layout) => {
+export const showCalculator = (layout, id) => {
     for (const element of layout) {
         createInDom(
             element.tag,
             element.class,
-            element.id,
+            id,
             element.parentId,
             element.text
         );
