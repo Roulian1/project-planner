@@ -1,4 +1,5 @@
 import { formatId } from "./format-id.js";
+
 /**
  * Create an element ready to be injected in DOM.
  *
@@ -45,7 +46,7 @@ const createInDom = (
     elementInnerText,
     id
 ) => {
-    // If parent is main, don't add a id number
+    // If parent is main, don't add an id number
     parentId = parentId === 'main' ? parentId : `#${formatId(parentId, id)}`
 
     // get the parent element
