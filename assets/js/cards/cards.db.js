@@ -27,4 +27,12 @@ export const cardsDB = [
         date: new Date(2022, 7, 11),
         id: 2
     }
+    ,
+    {
+        title: 'B task',
+        status: 'todo',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
+        date: new Date(2019, 7, 11),
+        id: 4
+    }
 ]

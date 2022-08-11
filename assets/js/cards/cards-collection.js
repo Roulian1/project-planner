@@ -29,6 +29,10 @@ export class CardsCollection {
         })
     }
 
+    filterByStatus(status) {
+        this._collection = this._collection.filter((Card) => Card.getStatus() === status);
+    }
+
     sortByName() {
         this._collection.sort(this.byName);
     }

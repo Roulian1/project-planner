@@ -5,5 +5,6 @@ import { listenSortButtons } from "./listen/cards-listeners.js";
 showForm();
 
 const Cards = new CardsCollection();
+Cards.filterByStatus('todo');
 Cards.showCollection();
 listenSortButtons(Cards);
