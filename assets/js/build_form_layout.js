@@ -15,25 +15,21 @@ import { entrance } from './entrance_form_layout.js';
  * @returns {Node}
  */
 const createElement = (
-    elementTag,
-    elementClass,
-    elementId,
-    elementInnerText,
-    elementType,
+    element
 ) => {
     // create a new section element
-    const newElement = document.createElement(elementTag);
+    const newElement = document.createElement(element.tag);
     // add class to it
-    newElement.classList.add(elementClass);
+    newElement.classList.add(element.class);
     // add id to it
-    newElement.id = elementId;
+    newElement.id = element.id;
     // add text to it
-    if (elementInnerText) {
-        newElement.innerText = elementInnerText;
+    if (element.text) {
+        newElement.InnerText = element.text;
     };
     // add type to it
-    if (elementType) {
-        newElement.type = elementType;
+    if (element.type) {
+        newElement.type = element.type;
     };
 
     return newElement;
@@ -51,25 +47,14 @@ const createElement = (
  * @param {string} elementType
  */
 const createInDom = (
-    elementTag,
-    elementClass,
-    elementId,
-    parentId,
-    elementInnerText,
-    elementType,
+    element
 ) => {
-    console.log(elementTag);
     // get the parent element
-    const parent = document.querySelector(`#${parentId}`);
+    const parent = document.querySelector(`#${element.parentId}`);
     // create Element
     const newElement = createElement(
-        elementTag,
-        elementClass,
-        elementId,
-        elementInnerText,
-        elementType,
+        element
     );
-console.log(newElement);
     // create and append new element to parent
     parent.append(newElement);
 
@@ -87,12 +72,7 @@ export const showForm = () => {
     for (const element of layout) {
         console.log(element);
         createInDom(
-            element.tag,
-            element.class,
-            element.id,
-            element.parentId,
-            element.text,
-            element.type,
+            element
         );
     }
 };
