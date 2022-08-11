@@ -4,35 +4,39 @@ export const cardsDB = [
         status: 'doing',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
         date: new Date(2024, 11, 28),
-        id: 35
-    },
-    {
-        title: '1an other task',
-        status: 'todo',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
-        date: new Date(2019, 10, 28),
-        id: 42
-    },
-    {
-        title: 'Third task',
-        status: 'todo',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
-        date: new Date(2022, 7, 10),
         id: 1
     },
     {
-        title: 'fourth task',
+        title: 'a. 1an other task',
+        status: 'todo',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
+        date: new Date(2019, 10, 28),
+        id: 2
+    },
+    {
+        title: 'e. Third task',
+        status: 'todo',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
+        date: new Date(2022, 7, 10),
+        id: 3
+    },
+    {
+        title: 'd. fourth task',
         status: 'done',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
         date: new Date(2022, 7, 11),
-        id: 2
+        id: 4
     }
     ,
     {
-        title: 'B task',
+        title: 'e. B task',
         status: 'todo',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
         date: new Date(2019, 7, 11),
-        id: 4
+        id: 5
     }
 ]
+
+export const dbId = {
+    lastId: 5
+}

@@ -1,10 +1,12 @@
-// import { cardsDB } from "./cards.db.js";
+//import { cardsDB } from "../model/cards.db.js";
 import { Card } from "./card.js";
-import { getCardsDB } from "../model/cards-db.js";
+//import { getCardsDB } from "../model/cards-db.js";
+import { DbController } from "../model/db-controller.js";
 
 export class CardsCollection {
 
     constructor(defaultSortStatus) {
+        this._db = new DbController();
         this._collection = [];
         this._filterStatus = '';// no filter
         this._todoStatus = true;
@@ -43,7 +45,7 @@ export class CardsCollection {
     }
 
     collectCards() {
-        const cardsDB = getCardsDB();
+        const cardsDB = this._db.db;
 
         for (const card of cardsDB) {
             this._collection.push(
