@@ -7,9 +7,9 @@ export class CardsCollection {
         this._collection = [];
         this._filterStatus = '';// no filter
         this._sortStatus = defaultSortStatus;
-        this._filterByTodoStatus = true;
-        this._filterByDoingStatus = true;
-        this._filterByDoneStatus = true;
+        this._todoStatus = true;
+        this._doingStatus = true;
+        this._doneStatus = true;
         this.collectCards();
     }
 
@@ -39,6 +39,8 @@ export class CardsCollection {
     }
 
     flushCardsDisplay() {
+        this._collection = [];
+
         const cardsContainer = document.querySelector('#main');
 
         cardsContainer.innerHTML = '';
@@ -52,36 +54,60 @@ export class CardsCollection {
     }
 
     SetFilterByTodoStatus(state) {
-        this.flushCardsDisplay();
-        this._filterByTodoStatus = state;
+        // this.flushCardsDisplay();
+        this._todoStatus = state;
         this.filterByStatus();
         this.showCollection();
     }
 
     SetFilterByDoingStatus(state) {
-        this.flushCardsDisplay();
-        this._filterByDoingStatus = state;
+        // this.flushCardsDisplay();
+        this._doingStatus = state;
         this.filterByStatus();
         this.showCollection();
     }
 
     SetFilterByDoneStatus(state) {
-        this.flushCardsDisplay();
-        this._filterByDoneStatus = state;
+        // this.flushCardsDisplay();
+        this._doneStatus = state;
         this.filterByStatus();
         this.showCollection();
     }
 
     filterByStatus() {
-        this._collection = [];
+        // this._collection = [];
+        this.flushCardsDisplay();
         this.collectCards();
         // this._collection = this._collection.filter((Card) => Card.getStatus() === status);
-        this._collection = this._collection.filter((Card) => this.filterByStatusCondition(Card.getStatus()));
+        // this._collection = this._collection.filter((Card) => this.filterByStatusCondition(Card.getStatus()));
+
+        console.log(this._collection);
+
+        console.log('todo : ');
+        console.log(this._todoStatus);
+        console.log('doing : ');
+        console.log(this._doingStatus);
+        console.log('done : ');
+        console.log(this._doneStatus);
+
+        this._collection = this._collection.filter((Card) => {
+            const status = Card.getStatus();
+
+            console.log('actual status : ');
+            console.log(status);
+
+            return (
+                (this._todoStatus && status === 'todo') || (this._doingStatus && status === 'doing') || (this._doneStatus && status === 'done')
+            )
+
+        });
+
+        console.log(this._collection);
     }
 
     filterByStatusCondition(status) {
         return (
-            (this._filterByTodoStatus === true && this._filterByTodoStatus === status) || (this._filterByDoingStatus === true && this._filterByDoingStatus === status) || (this._filterByDoneStatus === true && this._filterByDoneStatus === status)
+            (this._todoStatus === true && this._todoStatus === status) || (this._doingStatus === true && this._doingStatus === status) || (this._doneStatus === true && this._doneStatus === status)
 
         )
     }
