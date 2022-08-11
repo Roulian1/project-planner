@@ -25,7 +25,7 @@ const createElement = (
     newElement.id = element.id;
     // add text to it
     if (element.text) {
-        newElement.InnerText = element.text;
+        newElement.innerText = element.text;
     };
     // add type to it
     if (element.type) {
