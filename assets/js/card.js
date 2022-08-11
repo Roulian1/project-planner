@@ -29,7 +29,7 @@ export class Card {
     }
 
     setDate(date) {
-        this._date = daysSince(date);
+        this._date = date;
     }
 
     setStatus(status) {
@@ -85,13 +85,21 @@ export class Card {
     }
 
     refreshDate() {
-        this.timeElement().textContent = this._date;
+        this.timeElement().textContent = daysSince(this._date);
     }
 
     refreshStatus() {
-        const button = this.findElement(`card-${this._status}-button`);
+        const statusStates = ['todo', 'doing', 'done'];
 
-        button.disabled = true;
+        // enable all button excepted the selected status one.
+        statusStates.forEach((statusState => {
+            // get the status button element
+            const button = this.findElement(`card-${statusState}-button`);
+
+            // if the button element correspond to the selected status,
+            // disable it, otherwise enable it.
+            this._status === statusState ? button.disabled = true : button.disabled = false;
+        }))
     }
 
     hydrate() {
