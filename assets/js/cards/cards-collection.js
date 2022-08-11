@@ -5,7 +5,13 @@ export class CardsCollection {
 
     constructor() {
         this._collection = [];
+        this._filterStatus = '';// no filter
+        this._sortStatus = 'name';// filter by name by default
         this.collectCards();
+    }
+
+    setSortStatus(sortStatus) {
+        this._sortStatus = sortStatus;
     }
 
     collectCards() {
@@ -13,6 +19,19 @@ export class CardsCollection {
             this._collection.push(
                 new Card(card.id, card.title, card.text, card.date, card.status)
             )
+        }
+
+        switch (this._sortStatus) {
+            case 'name':
+                this.sortByName();
+                break;
+
+            case 'date':
+                this.sortByDate();
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -36,10 +55,12 @@ export class CardsCollection {
     }
 
     sortByName() {
+        this.setSortStatus('name');
         this._collection.sort(this.byName);
     }
 
     sortByDate() {
+        this.setSortStatus('date');
         this._collection.sort(this.byDate);
     }
 
