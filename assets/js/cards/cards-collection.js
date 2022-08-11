@@ -23,4 +23,32 @@ export class CardsCollection {
             Card.hydrate();
         })
     }
+
+    sortByName() {
+        this._collection.sort(this.byName);
+    }
+
+    sortByDate() {
+        this._collection.sort(this.byDate);
+    }
+
+    byName(a, b) {
+        let aFirst = a.getTitle().toLowerCase(),
+            bFirst = b.getTitle().toLowerCase();
+
+        if (aFirst < bFirst) {
+            return -1;
+        }
+        if (aFirst > bFirst) {
+            return 1;
+        }
+        return 0;
+    };
+
+    byDate(a, b) {
+        let dateA = new Date(a.getDate()),
+            dateB = new Date(b.getDate());
+
+        return dateA - dateB;
+    }
 }
