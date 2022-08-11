@@ -1,5 +1,6 @@
-import { cardsDB } from "./cards.db.js";
+// import { cardsDB } from "./cards.db.js";
 import { Card } from "./card.js";
+import { getCardsDB } from "../model/cards-db.js";
 
 export class CardsCollection {
 
@@ -42,6 +43,8 @@ export class CardsCollection {
     }
 
     collectCards() {
+        const cardsDB = getCardsDB();
+
         for (const card of cardsDB) {
             this._collection.push(
                 new Card(card.id, card.title, card.text, card.date, card.status)

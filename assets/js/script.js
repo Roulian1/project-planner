@@ -3,6 +3,7 @@ import { CardsCollection } from "./cards/cards-collection.js";
 import { listenSortButtons } from "./listen/cards-listeners.js";
 import { listenFilterButtons } from "./listen/cards-listeners.js";
 import { defaultSort } from "./cards/default-sort.js";
+// import { getCardsDB } from "./model/cards-db.js";
 
 
 let addB = document.getElementById('add-button');
