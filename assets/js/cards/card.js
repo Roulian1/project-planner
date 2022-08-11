@@ -11,9 +11,6 @@ export class Card {
         this.setText(text);
         this.setDate(date);
         this.setStatus(status);
-
-        // this.showInDom();
-        // this.hydrate();
     }
 
     setId(id) {

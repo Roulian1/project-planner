@@ -14,7 +14,12 @@ export class CardsCollection {
                 new Card(card.id, card.title, card.text, card.date, card.status)
             )
         }
-        console.log(this._collection);
+    }
+
+    flushCardsDisplay() {
+        const cardsContainer = document.querySelector('#main');
+
+        cardsContainer.innerHTML = '';
     }
 
     showCollection() {
