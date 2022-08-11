@@ -30,6 +30,8 @@ export class CardsCollection {
     }
 
     filterByStatus(status) {
+        this._collection = [];
+        this.collectCards();
         this._collection = this._collection.filter((Card) => Card.getStatus() === status);
     }
 

@@ -24,6 +24,10 @@ const filterByDoneListener = (Cards) => {
 const filterByToDoHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
+    Cards.flushCardsDisplay();
+    Cards.filterByStatus('todo');
+    Cards.showCollection();
+
     filterButtons.todo.disabled = true;
     filterButtons.doing.disabled = false;
     filterButtons.done.disabled = false;
@@ -32,6 +36,10 @@ const filterByToDoHandler = (Cards) => {
 const filterByDoingHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
+    Cards.flushCardsDisplay();
+    Cards.filterByStatus('doing');
+    Cards.showCollection();
+
     filterButtons.todo.disabled = false;
     filterButtons.doing.disabled = true;
     filterButtons.done.disabled = false;
@@ -39,6 +47,10 @@ const filterByDoingHandler = (Cards) => {
 
 const filterByDoneHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
+
+    Cards.flushCardsDisplay();
+    Cards.filterByStatus('done');
+    Cards.showCollection();
 
     filterButtons.todo.disabled = false;
     filterButtons.doing.disabled = false;
