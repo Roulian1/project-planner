@@ -3,6 +3,49 @@ export const listenSortButtons = (Cards) => {
     sortByDateListener(Cards);
 }
 
+export const listenFilterButtons = (Cards) => {
+    filterByToDoListener(Cards);
+    filterByDoingListener(Cards);
+    filterByDoneListener(Cards);
+}
+
+const filterByToDoListener = (Cards) => {
+    filterButtonsElement().todo.addEventListener('click', () => filterByToDoHandler(Cards));
+}
+
+const filterByDoingListener = (Cards) => {
+    filterButtonsElement().doing.addEventListener('click', () => filterByDoingHandler(Cards));
+}
+
+const filterByDoneListener = (Cards) => {
+    filterButtonsElement().done.addEventListener('click', () => filterByDoneHandler(Cards));
+}
+
+const filterByToDoHandler = (Cards) => {
+    const filterButtons = filterButtonsElement();
+
+    filterButtons.todo.disabled = true;
+    filterButtons.doing.disabled = false;
+    filterButtons.done.disabled = false;
+}
+
+const filterByDoingHandler = (Cards) => {
+    const filterButtons = filterButtonsElement();
+
+    filterButtons.todo.disabled = false;
+    filterButtons.doing.disabled = true;
+    filterButtons.done.disabled = false;
+}
+
+const filterByDoneHandler = (Cards) => {
+    const filterButtons = filterButtonsElement();
+
+    filterButtons.todo.disabled = false;
+    filterButtons.doing.disabled = false;
+    filterButtons.done.disabled = true;
+}
+
+
 const sortByNameListener = (Cards) => {
     sortButtonElement().name.addEventListener('click', () => sortByNameHandler(Cards));
 }
@@ -31,6 +74,14 @@ const sortByDateHandler = (Cards) => {
 
     buttonsElement.date.disabled = true;
     buttonsElement.name.disabled = false;
+}
+
+const filterButtonsElement = () => {
+    return {
+        todo: document.querySelector('#todo-button'),
+        doing: document.querySelector('#doing-button'),
+        done: document.querySelector('#done-button')
+    }
 }
 
 const sortButtonElement = () => {
