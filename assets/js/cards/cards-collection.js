@@ -3,10 +3,10 @@ import { Card } from "./card.js";
 
 export class CardsCollection {
 
-    constructor() {
+    constructor(defaultSortStatus) {
         this._collection = [];
         this._filterStatus = '';// no filter
-        this._sortStatus = 'name';// filter by name by default
+        this._sortStatus = defaultSortStatus;
         this.collectCards();
     }
 
