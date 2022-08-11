@@ -7,6 +7,9 @@ export class CardsCollection {
         this._collection = [];
         this._filterStatus = '';// no filter
         this._sortStatus = defaultSortStatus;
+        this._filterByTodoStatus = true;
+        this._filterByDoingStatus = true;
+        this._filterByDoneStatus = true;
         this.collectCards();
     }
 
@@ -48,10 +51,39 @@ export class CardsCollection {
         })
     }
 
-    filterByStatus(status) {
+    SetFilterByTodoStatus(state) {
+        this.flushCardsDisplay();
+        this._filterByTodoStatus = state;
+        this.filterByStatus();
+        this.showCollection();
+    }
+
+    SetFilterByDoingStatus(state) {
+        this.flushCardsDisplay();
+        this._filterByDoingStatus = state;
+        this.filterByStatus();
+        this.showCollection();
+    }
+
+    SetFilterByDoneStatus(state) {
+        this.flushCardsDisplay();
+        this._filterByDoneStatus = state;
+        this.filterByStatus();
+        this.showCollection();
+    }
+
+    filterByStatus() {
         this._collection = [];
         this.collectCards();
-        this._collection = this._collection.filter((Card) => Card.getStatus() === status);
+        // this._collection = this._collection.filter((Card) => Card.getStatus() === status);
+        this._collection = this._collection.filter((Card) => this.filterByStatusCondition(Card.getStatus()));
+    }
+
+    filterByStatusCondition(status) {
+        return (
+            (this._filterByTodoStatus === true && this._filterByTodoStatus === status) || (this._filterByDoingStatus === true && this._filterByDoingStatus === status) || (this._filterByDoneStatus === true && this._filterByDoneStatus === status)
+
+        )
     }
 
     sortByName() {

@@ -24,37 +24,76 @@ const filterByDoneListener = (Cards) => {
 const filterByToDoHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
-    Cards.flushCardsDisplay();
-    Cards.filterByStatus('todo');
-    Cards.showCollection();
+    //Cards.flushCardsDisplay();
 
-    filterButtons.todo.disabled = true;
-    filterButtons.doing.disabled = false;
-    filterButtons.done.disabled = false;
+    if (filterButtons.todo.disabled) {
+        // filterButtons.todo.disabled = false;
+        Cards.SetFilterByTodoStatus(true);
+    } else {
+        // filterButtons.todo.disabled = true;
+        Cards.SetFilterByTodoStatus(false);
+    }
+
+    switchDisabled(filterButtons.todo);
+
+    // Cards.filterByStatus();
+    // Cards.showCollection();
+
+    // filterButtons.todo.disabled = true;
+    // filterButtons.doing.disabled = false;
+    // filterButtons.done.disabled = false;
 }
 
 const filterByDoingHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
-    Cards.flushCardsDisplay();
-    Cards.filterByStatus('doing');
-    Cards.showCollection();
+    if (filterButtons.doing.disabled) {
+        // filterButtons.doing.disabled = false;
+        Cards.SetFilterByDoingStatus(true);
+    } else {
+        // filterButtons.doing.disabled = true;
+        Cards.SetFilterByDoingStatus(false);
+    }
 
-    filterButtons.todo.disabled = false;
-    filterButtons.doing.disabled = true;
-    filterButtons.done.disabled = false;
+    switchDisabled(filterButtons.doing);
+
+    // Cards.flushCardsDisplay();
+    // Cards.filterByStatus('doing');
+    // Cards.showCollection();
+
+    // filterButtons.todo.disabled = false;
+    // filterButtons.doing.disabled = true;
+    // filterButtons.done.disabled = false;
 }
 
 const filterByDoneHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
-    Cards.flushCardsDisplay();
-    Cards.filterByStatus('done');
-    Cards.showCollection();
+    if (isDisabled(filterButtons.done)) {
+        // filterButtons.done.disabled = false;
+        Cards.SetFilterByDoneStatus(true);
+    } else {
+        // filterButtons.done.disabled = true;
+        Cards.SetFilterByDoneStatus(false);
+    }
 
-    filterButtons.todo.disabled = false;
-    filterButtons.doing.disabled = false;
-    filterButtons.done.disabled = true;
+    switchDisabled(filterButtons.done);
+
+    // Cards.flushCardsDisplay();
+    // Cards.filterByStatus('done');
+    // Cards.showCollection();
+
+    // filterButtons.todo.disabled = false;
+    // filterButtons.doing.disabled = false;
+    // filterButtons.done.disabled = true;
+}
+
+const isDisabled = (element) => {
+    return element.classList.contains('disabled');
+}
+
+const switchDisabled = (element) => {
+    element.classList.toggle('disabled');
 }
 
 
