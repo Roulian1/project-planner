@@ -23,7 +23,7 @@ export const entrance = [
         type: "date",
     },
     {
-        tag: 'input',
+        tag: 'button',
         class: 'form_add_button',
         id: 'add_add_button',
         parentId: 'navigation',
