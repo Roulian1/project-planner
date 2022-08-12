@@ -1,0 +1,46 @@
+{
+    "cards": [
+        {
+            "title": "A task",
+            "status": "todo",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!",
+            "date": [2022, 7, 12],
+            "id": 1
+        },
+        {
+            "title": "C task",
+            "status": "todo",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!",
+            "date": [2022, 7, 11],
+            "id": 2
+        },
+        {
+            "title": "B task",
+            "status": "todo",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!",
+            "date": [2022, 7, 23],
+            "id": 3
+        },
+        {
+            "title": "E task",
+            "status": "done",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!",
+            "date": [2023, 7, 11],
+            "id": 4
+        },
+        {
+            "title": "G task",
+            "status": "doing",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!",
+            "date": [2019, 7, 11],
+            "id": 5
+        },
+        {
+            "title": "F task",
+            "status": "done",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!",
+            "date": [2025, 7, 11],
+            "id": 6
+        }
+    ]
+}
