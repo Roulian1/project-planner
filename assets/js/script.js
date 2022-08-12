@@ -3,6 +3,11 @@ import { CardsCollection } from "./cards/cards-collection.js";
 import { listenSortButtons } from "./listen/cards-listeners.js";
 import { listenFilterButtons } from "./listen/cards-listeners.js";
 import { defaultSort } from "./cards/default-sort.js";
+import { DbController } from './model/db-controller.js';
+
+
+const testDb = new DbController();
+console.log(testDb.getItemById(4));
 
 
 const defaultSortStatus = 'date';

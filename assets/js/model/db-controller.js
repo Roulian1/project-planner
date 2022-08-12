@@ -46,4 +46,15 @@ export class DbController {
     incrementId() {
         this._lastId++;
     }
+
+    updateItem(id, data) {
+
+    }
+
+    getItemById(id) {
+        return this._collection.reduce(
+            (match, item) => Number(item.id) === id ? item : match
+            , null
+        );
+    }
 }
