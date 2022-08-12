@@ -67,7 +67,7 @@ const createInDom = (
  * @param {Array.<Object>} layout
  */
 export const showForm = (Cards) => {
-    let layout = display.concat(entrance);
+    let layout = (entrance);
     for (const element of layout) {
         createInDom(
             element
