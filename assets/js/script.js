@@ -9,20 +9,20 @@ import { DbController } from "./model/db-controller.js";
 
 
 
-console.log('test');
-let test = new DbController();
-console.log(test.db);
+// console.log('test');
+// let test = new DbController();
+// console.log(test.db);
 
-test.addItem({
-    title: 'test title',
-    status: 'done',
-    text: 'test text',
-    date: [2023, 10, 22]
-})
+// test.addItem({
+//     title: 'test title',
+//     status: 'done',
+//     text: 'test text',
+//     date: [2023, 10, 22]
+// })
 
 
-console.log('filter :');
-console.log(test.getDb(['done']));
+// console.log('filter :');
+// console.log(test.getDb(['done']));
 
 
 

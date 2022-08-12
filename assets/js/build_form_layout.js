@@ -77,13 +77,13 @@ export const showForm = (Cards) => {
     const objDescriptive = document.getElementById('descriptive');
     const objDueDate = document.getElementById('due_date');
 
-    document.getElementById('add_entrance_button').addEventListener('click', function(e) {
+    document.getElementById('add_entrance_button').addEventListener('click', function (e) {
         console.log(objName.value + " " + objDescriptive.value + " " + objDueDate.value);
         const data = {
-            nameEnt : objName.value, 
-            descriptiveEnt : objDescriptive.value, 
-            dateEnt : objDueDate.value
+            title: objName.value,
+            text: objDescriptive.value,
+            date: objDueDate.value
         };
-        Cards.addItem(Cards); 
-    },);
+        Cards.addItem(data);
+    });
 };
