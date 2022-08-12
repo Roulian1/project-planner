@@ -76,16 +76,38 @@ export class CardsCollection {
     flushCardsDisplay() {
         this._collection = [];
 
+        this.flushDisplay();
+
+        // const cardsContainer = document.querySelector('#main');
+
+        // cardsContainer.innerHTML = '';
+    }
+
+    flushDisplay() {
         const cardsContainer = document.querySelector('#main');
 
         cardsContainer.innerHTML = '';
     }
+
 
     showCollection() {
         this._collection.forEach((Card) => {
             Card.showInDom();
             Card.hydrate();
         })
+    }
+
+    addItem(datas) {
+        this._db.addItem(datas);
+
+        this.flushCardsDisplay();
+
+        this.collectCards();
+
+        this.showCollection();
+
+
+
     }
 
     SetFilterByTodoStatus(state) {
