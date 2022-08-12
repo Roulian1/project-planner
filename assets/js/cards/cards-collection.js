@@ -45,13 +45,32 @@ export class CardsCollection {
     }
 
     collectCards() {
-        const cardsDB = this._db.db;
+        // const cardsDB = this._db.db;
+        const cardsDB = this._db.getDb(this.filters);
 
         for (const card of cardsDB) {
             this._collection.push(
                 new Card(card.id, card.title, card.text, card.date, card.status)
             )
         }
+    }
+
+    get filters() {
+        let output = [];
+
+        if (this._todoStatus) {
+            output.push('todo')
+        }
+
+        if (this._doingStatus) {
+            output.push('doing')
+        }
+
+        if (this._doneStatus) {
+            output.push('done')
+        }
+
+        return output;
     }
 
     flushCardsDisplay() {
