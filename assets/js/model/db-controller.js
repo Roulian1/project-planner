@@ -21,7 +21,8 @@ export class DbController {
 
         for (const filter of filters) {
             let filtered = this._collection.filter(
-                Card => Card.status === filter);
+                Card => Card.status === filter
+            );
 
             output = output.concat(filtered);
         }
