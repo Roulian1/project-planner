@@ -96,15 +96,11 @@ export class CardsCollection {
     addItem(data) {
         data.status = 'todo';
 
-        console.log(data);
-
         this._db.addItem(data);
 
         this.flushCardsDisplay();
 
         this.collectCards();
-
-        console.log(this._db);
 
         this.showCollection();
 

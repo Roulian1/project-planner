@@ -31,11 +31,8 @@ export class DbController {
 
     addItem(data) {
         // data must be : {title: 'my title', status: 'todo', text: 'my text', date: date}
-        console.log('id before');
-        console.log(this._lastId);
         this.incrementId();
-        console.log('id after');
-        console.log(this._lastId);
+
         this._collection.push({
             title: data.title,
             status: data.status,
@@ -44,8 +41,6 @@ export class DbController {
             ),
             id: this._lastId
         })
-
-        console.log(this._collection);
     }
 
     incrementId() {

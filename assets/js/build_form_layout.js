@@ -1,6 +1,4 @@
 // Displaying the entrance form layout with button +
-
-import { display } from './display_form_layout.js';
 import { entrance } from './entrance_form_layout.js';
 
 /**
@@ -78,7 +76,6 @@ export const showForm = (Cards) => {
     const objDueDate = document.getElementById('due_date');
 
     document.getElementById('add_entrance_button').addEventListener('click', function (e) {
-        console.log(objName.value + " " + objDescriptive.value + " " + objDueDate.value);
         const data = {
             title: objName.value,
             text: objDescriptive.value,
