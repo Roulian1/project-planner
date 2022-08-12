@@ -68,9 +68,7 @@ const createInDom = (
  */
 export const showForm = () => {
     let layout = display.concat(entrance);
-    console.log(layout);
     for (const element of layout) {
-        console.log(element);
         createInDom(
             element
         );

@@ -13,7 +13,6 @@ function RespondClick() {
     showForm();
 }
 
-
 const defaultSortStatus = 'date';
 const Cards = new CardsCollection(defaultSortStatus);
 

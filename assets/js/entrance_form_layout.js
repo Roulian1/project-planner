@@ -25,7 +25,7 @@ export const entrance = [
     {
         tag: 'button',
         class: 'form_add_button',
-        id: 'add_add_button',
+        id: 'add_entrance_button',
         parentId: 'navigation',
         text: 'Add',
         type: "button",
