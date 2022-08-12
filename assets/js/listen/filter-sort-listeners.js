@@ -24,68 +24,38 @@ const filterByDoneListener = (Cards) => {
 const filterByToDoHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
-    //Cards.flushCardsDisplay();
-
-    if (filterButtons.todo.disabled) {
-        // filterButtons.todo.disabled = false;
+    if (isDisabled(filterButtons.todo)) {
         Cards.SetFilterByTodoStatus(true);
     } else {
-        // filterButtons.todo.disabled = true;
         Cards.SetFilterByTodoStatus(false);
     }
 
     switchDisabled(filterButtons.todo);
-
-    // Cards.filterByStatus();
-    // Cards.showCollection();
-
-    // filterButtons.todo.disabled = true;
-    // filterButtons.doing.disabled = false;
-    // filterButtons.done.disabled = false;
 }
+
 
 const filterByDoingHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
-    if (filterButtons.doing.disabled) {
-        // filterButtons.doing.disabled = false;
+    if (isDisabled(filterButtons.doing)) {
         Cards.SetFilterByDoingStatus(true);
     } else {
-        // filterButtons.doing.disabled = true;
         Cards.SetFilterByDoingStatus(false);
     }
 
     switchDisabled(filterButtons.doing);
-
-    // Cards.flushCardsDisplay();
-    // Cards.filterByStatus('doing');
-    // Cards.showCollection();
-
-    // filterButtons.todo.disabled = false;
-    // filterButtons.doing.disabled = true;
-    // filterButtons.done.disabled = false;
 }
 
 const filterByDoneHandler = (Cards) => {
     const filterButtons = filterButtonsElement();
 
     if (isDisabled(filterButtons.done)) {
-        // filterButtons.done.disabled = false;
         Cards.SetFilterByDoneStatus(true);
     } else {
-        // filterButtons.done.disabled = true;
         Cards.SetFilterByDoneStatus(false);
     }
 
     switchDisabled(filterButtons.done);
-
-    // Cards.flushCardsDisplay();
-    // Cards.filterByStatus('done');
-    // Cards.showCollection();
-
-    // filterButtons.todo.disabled = false;
-    // filterButtons.doing.disabled = false;
-    // filterButtons.done.disabled = true;
 }
 
 const isDisabled = (element) => {
