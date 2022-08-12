@@ -70,8 +70,6 @@ export class CardsCollection {
             output.push('done')
         }
 
-        console.log(output);
-
         return output;
     }
 
@@ -79,10 +77,6 @@ export class CardsCollection {
         this._collection = [];
 
         this.flushDisplay();
-
-        // const cardsContainer = document.querySelector('#main');
-
-        // cardsContainer.innerHTML = '';
     }
 
     flushDisplay() {
@@ -119,32 +113,26 @@ export class CardsCollection {
     }
 
     SetFilterByTodoStatus(state) {
-        // this.flushCardsDisplay();
         this._todoStatus = state;
         this.filterByStatus();
         this.showCollection();
     }
 
     SetFilterByDoingStatus(state) {
-        // this.flushCardsDisplay();
         this._doingStatus = state;
         this.filterByStatus();
         this.showCollection();
     }
 
     SetFilterByDoneStatus(state) {
-        // this.flushCardsDisplay();
         this._doneStatus = state;
         this.filterByStatus();
         this.showCollection();
     }
 
     filterByStatus() {
-        // this._collection = [];
         this.flushCardsDisplay();
         this.collectCards();
-        // this._collection = this._collection.filter((Card) => Card.getStatus() === status);
-        // this._collection = this._collection.filter((Card) => this.filterByStatusCondition(Card.getStatus()));
 
         console.log(this._collection);
 
