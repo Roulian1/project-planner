@@ -73,4 +73,12 @@ export const showForm = () => {
             element
         );
     }
+    const objName = document.getElementById('name');
+    const objDescriptive = document.getElementById('descriptive');
+    const objDueDate = document.getElementById('due_date');
+
+    document.getElementById('add_entrance_button').addEventListener('click', function(e) {
+        console.log(objName.value + " " + objDescriptive.value + " " + objDueDate.value);
+        return {nameEnt : objName.value, descriptiveEnt : objDescriptive.value, dateEnt : objDueDate.value};
+    },);
 };
