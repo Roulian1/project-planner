@@ -70,6 +70,8 @@ export class CardsCollection {
             output.push('done')
         }
 
+        console.log(output);
+
         return output;
     }
 
