@@ -7,13 +7,6 @@ import { defaultSort } from "./cards/default-sort.js";
 import { DbController } from "./model/db-controller.js";
 
 
-let addB = document.getElementById('add-button');
-
-addB.addEventListener("click", RespondClick);
-
-function RespondClick() {
-    showForm();
-}
 
 
 console.log('test');
@@ -46,3 +39,13 @@ defaultSort(defaultSortStatus);
 Cards.showCollection();
 listenSortButtons(Cards);
 listenFilterButtons(Cards);
+
+// Change Jul
+
+let addB = document.getElementById('add-button');
+
+addB.addEventListener("click", RespondClick);
+
+function RespondClick() {
+    showForm(Cards);
+}

@@ -66,7 +66,7 @@ const createInDom = (
  *
  * @param {Array.<Object>} layout
  */
-export const showForm = () => {
+export const showForm = (Cards) => {
     let layout = display.concat(entrance);
     for (const element of layout) {
         createInDom(
@@ -79,6 +79,11 @@ export const showForm = () => {
 
     document.getElementById('add_entrance_button').addEventListener('click', function(e) {
         console.log(objName.value + " " + objDescriptive.value + " " + objDueDate.value);
-        return {nameEnt : objName.value, descriptiveEnt : objDescriptive.value, dateEnt : objDueDate.value};
+        const data = {
+            nameEnt : objName.value, 
+            descriptiveEnt : objDescriptive.value, 
+            dateEnt : objDueDate.value
+        };
+        Cards.addItem(Cards); 
     },);
 };
