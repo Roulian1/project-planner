@@ -48,12 +48,17 @@ export class DbController {
     }
 
     updateItem(id, data) {
+        const item = this._collection[this.getItemIndexById(id)];
 
+        // loop trough passed data to change only passed values
+        for (const key in data) {
+            item[key] = data[key];
+        }
     }
 
     getItemIndexById(id) {
         return this._collection.reduce(
-            (match, item, index) => Number(item.id) === id ? item : index
+            (match, item, index) => Number(item.id) === id ? index : match
             , null
         );
     }

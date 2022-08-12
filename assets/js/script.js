@@ -6,8 +6,10 @@ import { defaultSort } from "./cards/default-sort.js";
 import { DbController } from './model/db-controller.js';
 
 
-const testDb = new DbController();
-console.log(testDb.getItemIndexById(4));
+// const testDb = new DbController();
+// console.log(testDb.updateItem(30, {
+//     status: 'doing'
+// }));
 
 
 const defaultSortStatus = 'date';
