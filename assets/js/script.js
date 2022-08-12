@@ -7,7 +7,7 @@ import { DbController } from './model/db-controller.js';
 
 
 const testDb = new DbController();
-console.log(testDb.getItemById(4));
+console.log(testDb.getItemIndexById(4));
 
 
 const defaultSortStatus = 'date';

@@ -25,7 +25,7 @@ export const cardsDB = [
         status: 'done',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem asperiores ipsam temporibus aspernatur veniam qui veritatis impedit maiores recusandae, quibusdam, nesciunt aliquam quo suscipit, assumenda excepturi quaerat eius sint repellendus!',
         date: new Date(2022, 7, 11),
-        id: 4
+        id: 7
     }
     ,
     {

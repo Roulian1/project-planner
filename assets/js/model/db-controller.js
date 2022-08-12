@@ -51,6 +51,13 @@ export class DbController {
 
     }
 
+    getItemIndexById(id) {
+        return this._collection.reduce(
+            (match, item, index) => Number(item.id) === id ? item : index
+            , null
+        );
+    }
+
     getItemById(id) {
         return this._collection.reduce(
             (match, item) => Number(item.id) === id ? item : match
