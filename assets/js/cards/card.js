@@ -2,6 +2,7 @@ import { showTemplate } from "./build-template.js";
 import { todoCardLayout } from "./todo-card-layout.js";
 import { formatId } from "./format-id.js";
 import { daysSince } from "./dates.js";
+import { cardStatusListener } from "../listen/card-listener.js";
 
 export class Card {
 
@@ -75,6 +76,7 @@ export class Card {
 
     showInDom() {
         showTemplate(todoCardLayout, this._id);
+        cardStatusListener(this._id, this._status);
     }
 
     refreshTitle() {
