@@ -26,7 +26,13 @@ test.addItem({
     date: [2023, 10, 22]
 })
 
-console.log('by name');
+
+console.log('filter :');
+console.log(test.getDb(['done']));
+
+
+
+//console.log('by name');
 // console.log(test.db('name'));
 // console.log(test.db('date'));
 

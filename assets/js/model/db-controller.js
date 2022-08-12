@@ -1,12 +1,13 @@
 import { cardsDB } from "./cards.db.js";
 import { dbId } from "./cards.db.js";
+import { Card } from "../cards/card.js";
 
 export class DbController {
 
     constructor() {
         this._lastId = dbId.lastId;
         this._collection = cardsDB;
-        console.log(this._collection);
+        //console.log(this._collection);
     }
 
     get lastId() {
@@ -14,7 +15,20 @@ export class DbController {
     }
 
     get db() {
-        return this._collection;
+        return this.getDb();
+    }
+
+    getDb(filters = ['todo', 'done', 'doing']) {
+        let output = [];
+
+        for (const filter of filters) {
+            let filtered = this._collection.filter(
+                Card => Card.status === filter);
+
+            output = output.concat(filtered);
+        }
+
+        return output;
     }
 
     // db(sort) {

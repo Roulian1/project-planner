@@ -53,6 +53,10 @@ export class Card {
         return this._status;
     }
 
+    get status() {
+        return this._status;
+    }
+
     titleElement() {
         return this.findElement('card-title');
     }
